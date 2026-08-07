@@ -1,0 +1,24 @@
+
+
+/*
+=====================================================
+CREATE PROJECT SCHEMAS
+=====================================================
+*/
+
+CREATE SCHEMA IF NOT EXISTS raw;
+CREATE SCHEMA IF NOT EXISTS staging;
+CREATE SCHEMA IF NOT EXISTS warehouse;
+CREATE SCHEMA IF NOT EXISTS analytics;
+
+-- Verify
+
+SELECT schema_name
+FROM information_schema.schemata
+WHERE schema_name IN
+(
+    'raw',
+    'staging',
+    'warehouse',
+    'analytics'
+);
